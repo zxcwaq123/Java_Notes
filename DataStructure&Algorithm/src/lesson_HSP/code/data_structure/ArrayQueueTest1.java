@@ -2,7 +2,7 @@ package lesson_HSP.code.data_structure;
 
 import java.util.Scanner;
 
-public class ArrayQueuetest1 {
+public class ArrayQueueTest1 {
     public static void main(String[] args) {
         //测试
         //创建一个队列
