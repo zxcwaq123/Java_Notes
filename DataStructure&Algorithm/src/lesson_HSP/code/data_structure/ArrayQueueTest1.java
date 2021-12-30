@@ -143,5 +143,4 @@ class ArrayQueue{
             return arr[rear];
         }
     }
-
 }
