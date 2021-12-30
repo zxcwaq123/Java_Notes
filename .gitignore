@@ -1,0 +1,12 @@
+#忽略所有文件
+#只上传"/Lessons_SHK/src"和.gitignore
+#需要逐级指定
+/*
+!/JavaBasics/
+
+/JavaBasics/*
+!/JavaBasics/src
+
+
+
+!.gitignore
