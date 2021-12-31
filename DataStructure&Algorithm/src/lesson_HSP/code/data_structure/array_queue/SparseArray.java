@@ -1,4 +1,4 @@
-package lesson_HSP.code.data_structure;
+package lesson_HSP.code.data_structure.array_queue;
 
 public class SparseArray {
     public static void main(String[] args) {
