@@ -22,6 +22,9 @@ package lesson_HSP.code.data_structure.linked_list;
     1. 先找到需要删除节点的前一个节点,添加辅助指针temp
     2. 让temp.next = temp.next.next;
     3. 被删除的节点将不会有其他引用指向，会被垃圾回收机制回收
+
+***添加
+* 1. 获取单链表有效数据节点的个数
  */
 public class SingleLinkedListTest2 {
     public static void main(String[] args) {
@@ -58,6 +61,22 @@ public class SingleLinkedListTest2 {
         singleLinkedList2.delete(3);
         //显示
         singleLinkedList2.listNode();
+        System.out.println("有效结点个数为：" + getLength(singleLinkedList2.getHead()));
+    }
+
+    /**
+     * @Description 获取单链表的节点个数（不统计头结点）
+     * @param head 链表的头结点
+     * @return 返回有效节点的个数
+     */
+    public static int getLength(HeroNode head){
+        int length = 0;
+        HeroNode temp = head.next;
+        while (temp != null){
+            length++;
+            temp = temp.next;
+        }
+        return length;
     }
 }
 class SingleLinkedList2{
@@ -168,6 +187,9 @@ class SingleLinkedList2{
             //将指针后移
             temp = temp.next;
         }
+    }
 
+    public HeroNode getHead() {
+        return head;
     }
 }
