@@ -1,6 +1,6 @@
-package lesson_SHK.code.object_oriented.project02.service;
+package lesson_SHK.code.object_oriented.day10_project02.service;
 
-import lesson_SHK.code.object_oriented.project02.bean.Customer;
+import lesson_SHK.code.object_oriented.day10_project02.bean.Customer;
 
 /*
 CustomerList类的设计：用来管理Customer对象，内部使用数组管理一组Customer

@@ -1,4 +1,4 @@
-package lesson_SHK.code.object_oriented.project02.util;
+package lesson_SHK.code.object_oriented.day10_project02.util;
 
 import java.util.*;
 

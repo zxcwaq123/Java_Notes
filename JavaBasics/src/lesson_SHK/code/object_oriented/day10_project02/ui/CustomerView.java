@@ -1,8 +1,8 @@
-package lesson_SHK.code.object_oriented.project02.ui;
+package lesson_SHK.code.object_oriented.day10_project02.ui;
 
-import lesson_SHK.code.object_oriented.project02.bean.Customer;
-import lesson_SHK.code.object_oriented.project02.service.CustomerList;
-import lesson_SHK.code.object_oriented.project02.util.CMUtility;
+import lesson_SHK.code.object_oriented.day10_project02.bean.Customer;
+import lesson_SHK.code.object_oriented.day10_project02.service.CustomerList;
+import lesson_SHK.code.object_oriented.day10_project02.util.CMUtility;
 
 import java.util.Scanner;
 

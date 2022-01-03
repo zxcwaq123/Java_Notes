@@ -1,4 +1,4 @@
-package lesson_SHK.code.object_oriented.project02.bean;
+package lesson_SHK.code.object_oriented.day10_project02.bean;
 
 /**
  * Customer类，用来封装客户信息
