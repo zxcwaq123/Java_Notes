@@ -5,7 +5,7 @@
 2. 便于功能的拓展
 3. 为之后多态性的使用，提供了前提
 
-### 二、继承性的格式：class A extends B{}
+### 二、继承性的格式：class A extends B
     A: 子类、派生类、subclass
     B: 父类、超类、基类、superclass
 
@@ -25,5 +25,5 @@
 ### 四、其他
 
 1. 如果没有显示的声明一个类的父类，则此类继承于java.lang.Object类
-2. 所有的Java类(除java.lang.Object类之外)，都直接或者简洁的继承于java.lang.Object类
+2. 所有的Java类(除java.lang.Object类之外)，都直接或者间接地继承于java.lang.Object类
 3. 意味着，所有的java类，都具有java.lang.Object类中声明的功能
