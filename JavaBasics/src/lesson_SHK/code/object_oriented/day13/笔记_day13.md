@@ -1,6 +1,6 @@
 # Day 13
 
-[TOC]
+[toc]
 
 ## 一、多态性（Polymorphism）
 
@@ -91,4 +91,6 @@ Object obj = new Woman();
 Person p = (Person)obj;
 ```
 
-## 
+## 三、Object类的使用
+
+
