@@ -1,5 +1,7 @@
 # Day 13
 
+[TOC]
+
 ## 一、多态性（Polymorphism）
 
 ### 1. 理解：对象的多态性，即   一个事物的多种形态
@@ -88,3 +90,5 @@ Man m5 = new Woman();
 Object obj = new Woman();
 Person p = (Person)obj;
 ```
+
+## 
