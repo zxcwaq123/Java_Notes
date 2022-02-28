@@ -91,6 +91,84 @@ Object obj = new Woman();
 Person p = (Person)obj;
 ```
 
-## 三、Object类的使用
+## 三、Object类的使用(java.lang.Object)
+
+* Object类是所有Java类的根父类
 
 
+* 如果在类的声明中未使用extends关键字指明其父类，则默认父类为java.lang.Object类。
+
+
+* Object类中的功能（属性、方法）就具有通用性
+
+
+* Object类中只声明了<font color=red>**一个空参构造器**</font>
+
+### 1. Object类中的功能（属性、方法）
+
+* clone() —— 克隆对象
+  * 相当于多态赋值，返回一个当前对象的复制，指向Object类。
+  * 克隆后的对象指向Object，因此要再赋值给其他对象时，<font color=red>**需要强转**</font>。
+
+```java
+Person p1 = new Person;
+Person p2 = (Person) p1.clone();
+```
+
+* public boolean equals() —— 比较两个对象是否相等
+
+
+* finalize() —— 垃圾回收
+
+  * 如果在堆空间中的对象没有任何栈空间中的引用指向它，则自动调用finalize()方法，自动回收堆空间中的空间。
+
+    * `p = null` 此时对象实体就是垃圾对象，等待被回收但时间不确定
+  
+  * `System.gc()` 强制性释放空间。
+
+* getClass() —— 获取当前对象所属的类
+
+* hashCode() —— 返回当前对象的哈希值
+
+* toString() —— 
+
+* notify() ——
+
+* notifyAll() —— 
+
+* wait() —— 
+
+### 2. 问题：== 和 equals()的区别
+
+#### 一、 == [运算符] 的使用
+
+* 可以使用在基本数据类型和引用数据类型变量中
+
+* **基本数据类型：** 比较两个变量保存的数据是否相等。(不一定要同类型)
+
+* **引用数据类型：** 比较两个对象的地址值是否相同，即两个引用是否指向同一个对象实体。
+
+#### 二、equals() [方法] 的使用
+
+* 只能适用于引用数据类型
+
+* Object类中equals()的定义，也是比较两个引用数据类型的地址值。
+
+```java
+public boolean equals(Object obj){
+    return (this == obj);
+}
+```
+
+* **String、Date、File、包装类**等都重写了Object类中的equals()方法。重写后，比较的不是两个引用的地址，而是**两个对象的“实体内容“是否相同**。
+
+#### 三、自定义类重写equals()方法
+
+* 自定义类如果使用equals()的话，也通常是比较两个对象”实体内容“是否相同。那么，我们就需要对Object类中的equals()进行重写。
+
+```java
+@override
+public boolean equals(Object obj1,Object obj2){
+    return (this == obj);
+}
+```
