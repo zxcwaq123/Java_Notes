@@ -132,6 +132,20 @@ Person p2 = (Person) p1.clone();
 
 * toString() —— 
 
+  * 当输出一个对象的引用时，实际上就是调用当前对象的toString()方法
+
+  * 像String、Date、File、包装类等都重写了Object类中的toString()方法，使得在调用对象的toString()时，返回”实体内容”信息。
+  
+  * 
+
+  * Object类中toString()的定义
+
+```java
+public String toString(){
+    return getClass().getName() + "@" = Interger.toHexString(hasCode());
+        }
+```
+
 * notify() ——
 
 * notifyAll() —— 
@@ -164,11 +178,22 @@ public boolean equals(Object obj){
 
 #### 三、自定义类重写equals()方法
 
-* 自定义类如果使用equals()的话，也通常是比较两个对象”实体内容“是否相同。那么，我们就需要对Object类中的equals()进行重写。
+* 自定义类如果使用equals()的话，也通常是比较两个对象”实体内容“是否相同，即需要对Object类中的equals()进行重写。
 
 ```java
 @override
-public boolean equals(Object obj1,Object obj2){
-    return (this == obj);
+public boolean equals(Object obj){
+    if(this == obj){
+        return true;
+        }
+    if(obj instance of Customer){
+        Customer cust = (Customer) obj;
+        // 比较两个对象的每个属性是否都相同
+        return (this.age == cust.age && this.name.equals(cust.name));
+        }
+    return false;
 }
 ```
+## 四、包装类的使用
+
+
