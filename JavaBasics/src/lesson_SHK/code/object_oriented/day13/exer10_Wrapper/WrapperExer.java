@@ -18,12 +18,12 @@ import java.util.Vector;
 public class WrapperExer {
     public static void main(String[] args) {
         Vector v = new Vector();
+        Scanner s = new Scanner(System.in);
         int max = 0;
 
         do {
             System.out.print("请输入学生成绩（结束请输入负数）：");
-            Scanner s = new Scanner(System.in);
-            Integer g = s.nextInt();
+            Integer g = s.nextInt(); // 自动装箱
             if (g > max)
                 max =g;
             if (g >=0)
