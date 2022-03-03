@@ -241,10 +241,8 @@ public boolean equals(Object obj){
     * 红色包装类为基本数据类型的全称。
     * 数值型包装类（前6种），有共同的父类Number。
 
+### 1. 基本数据类型、包装类和String类的相互转化 
+
 ![img_1.png](img_1.png)
-
-### 1. 基本数据类型 ——> 包装类 
-
-
 
 
