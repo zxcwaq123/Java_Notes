@@ -194,6 +194,57 @@ public boolean equals(Object obj){
     return false;
 }
 ```
-## 四、包装类的使用
+
+## 四、Java中的JUnit单元测试
+  
+* Java类的要求
+
+  * 此类时public的
+
+  * 此类提供公共的无参构造器
+
+
+* 在此类中声明单元测试方法
+
+  * 方法权限时public
+
+  * 没有返回值
+
+  * 没有形参
+
+  * 此单元测试方法上，需要声明注解：@Test，然后“Alt + Enter”，加载JUnit;
+
+  * 声明好单元测试方法以后，就可以在方法体内测试相关的代码。
+
+  * 写完后，右键方法名，选择 Run ‘方法名()’。
+
+![img.png](img.png)
+
+
+## 五、包装类(Wrapper)的使用
+
+    针对八种基本数据类型，定义相应的引用类型——包装类(封装类)。
+    
+    有了类的特点，才可以调用类中的方法，即面向对象。
+
+| 基本数据类型  |                        包装类                        |
+|:-------:|:-------------------------------------------------:|
+|  byte   |                       Byte                        |
+|  short  |                       Short                       |
+|   int   |          <font color=red>Integer</font>           |
+|  long   |                       Long                        |
+|  float  |                       Float                       |
+| double  |                      Double                       |
+| boolean |                      Boolean                      |
+|  char   |                     <font color=red>Character</font>                     |
+
+    * 红色包装类为基本数据类型的全称。
+    * 数值型包装类（前6种），有共同的父类Number。
+
+![img_1.png](img_1.png)
+
+### 1. 基本数据类型 ——> 包装类 
+
+
 
 
