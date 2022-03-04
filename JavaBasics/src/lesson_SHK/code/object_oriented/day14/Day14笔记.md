@@ -49,4 +49,80 @@
 
   * 操作静态属性的方法，通常设置为静态的
 
-  * 工具类中的方法，习惯上声明为static的。如： `Math`、`Arrays`、`Collections`、
+  * 工具类中的方法，习惯上声明为static的。如： `Math`、`Arrays`、`Collections`。
+
+## 二、单例(Singleton)设计模式
+
+### 1. 定义
+
+* 采取一定的方法保证在整个软件系统中，对某个类只能存在一个对象实例。
+
+### 2. 实现
+
+#### 2.1 饿汉式
+```java
+class Bank{
+    // 1. 私有化类的构造器
+    private Bank(){
+
+    }
+
+    // 2. 在类的内部创建类的静态的对象
+    private static Bank instance = new Bank();
+
+    // 3. 提供公共的静态的方法，返回类的对象
+    public static Bank getInstance(){
+        return instance; // 4. 静态方法调用的属性也必须是静态的，因此2中声明为静态
+    }
+}
+```
+
+#### 2.2 懒汉式
+
+```java
+class Order{
+
+    //1. 私有化类的构造器
+    private Order(){
+    }
+
+    //2. 声明当前类的对象，没有初始化
+    private static Order instance = null;
+
+    //3. 提供公共的静态的方法，返回类的对象
+    public static Order getInstance(){
+        if(instance == null)
+        instance = new Order(); // 4. 静态方法调用的属性也必须是静态的，因此2中声明为静态
+
+        return instance;
+    }
+}
+```
+
+#### 2.3 区分饿汉式 和 懒汉式
+
+* 饿汉式
+
+  * 好处：线程安全
+
+  * 坏处：对象加载时间过长
+
+* 懒汉式
+
+  * 坏处：目前写法，线程不安全。——> 到多线程内容再进行修改。
+
+  * 好处：延迟对象的创建，节省内存。
+
+## 三、main()方法的语法
+
+```java
+public static void main(String[]args){
+        
+        }
+```
+
+### 1. main()方法作为程序的入口
+
+### 2. main()方法也是一个普通的静态方法
+
+### 3. 
