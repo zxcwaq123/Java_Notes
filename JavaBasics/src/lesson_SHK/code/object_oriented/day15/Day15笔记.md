@@ -39,3 +39,86 @@ Person p = new Person(){
 
 ### 6.抽象类、多态的应用：模板方法设计模式(TemplateMethod)
 
+## 二、接口(interface)
+
+### 1. Java中，接口和类时两个并列的结构
+
+### 2. 定义接口：定义接口中的成员
+
+#### 2.1 JDK7及以前：只能定义全局常量和抽象方法
+
+* 全局常量：public static final (<font color = red>**但书写可以省略**</font>)
+
+* 抽象方法：public abstract
+
+#### 2.2 JDK8：除上述外，还可以定义静态方法、默认方法
+
+### 3. 接口中不能定义构造器 ——> 意味着接口不能被实例化
+
+### 4. Java开放中，接口通过让类区实现(implement)的方式来使用。
+
+* 如果实现类覆盖了接口中所有的抽象方法，则此实现类可以实例化。
+
+* 如果实现类没有全部覆盖接口中的抽象方法，则此类仍为抽象类，不能实例化。
+
+### 5. Java类可以实现多个接口 ——> 弥补了Java单继承性的局限性。
+
+* 格式
+
+```java
+class AA extends BB implements CC, DD, EE{
+    
+}
+```
+
+### 6. 接口与接口之间可以继承（多继承）
+
+```java
+interface AA{}
+
+interface BB{}
+
+interface CC extends AA, BB{}
+```
+
+### 7. 接口的具体使用：体现多态性(具体使用的是接口实现类的对象实例)
+
+### 8. 接口：实际上可以看作是一种规范
+
+### 9. 接口 (匿名/非匿名) 实现类的 (匿名/非匿名) 对象
+
+* 非匿名实现类的非匿名对象
+
+```java
+Phone p1 = new Phone();
+```
+
+* 非匿名实现类的匿名对象
+
+```java
+com.transferData(new Phone());
+```
+
+* 匿名实现类的非匿名对象
+
+```java
+USB p1 = new USB(){
+    @Override
+    public void start{
+        方法体；
+        }
+        };
+```
+
+* 匿名实现类的匿名对象
+
+```java
+com.transferData(new USB(){
+    @Override
+    public void start{
+        方法体；
+        }
+});
+```
+
+
