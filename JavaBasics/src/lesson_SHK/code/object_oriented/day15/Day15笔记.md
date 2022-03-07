@@ -22,7 +22,7 @@
 
 ### 4. abstract使用注意点
 
-* abstract不能用来修饰私有(private)方法、静态(static)方法、final方法
+* abstract不能用来修饰私有(private)方法、静态(static)方法、final方法、final的类
 
 ### 5. 抽象类的匿名子类
 
@@ -133,5 +133,138 @@ com.transferData(new USB(){
 * 工厂模式
 
   * 工厂模式是将创建对象的具体过程屏蔽隔离起来，达到提高灵活性的目的。
+  
 
-  * 
+### 11. java8中接口的新特性
+
+除了定义定义全局常量和抽象方法外，还可以定义静态方法、默认方法(加default，不是权限修饰符)
+
+* 接口中定义的静态方法，<font color = red>**只能**</font>通过“接口.方法”来调用。
+
+
+* 通过实现类的对象，可以调用接口中定义的默认方法。
+
+  * 若实现类中重写了接口中的默认方法，则调用的是重写后的方法。
+  
+
+* 如果子类(实现类)继承的父类和实现的接口中，出现了同名同参数的方法。
+
+  * 在子类没有重写此方法的情况下，默认调用的是<font color = red>**父类中**</font>的同名同参数方法。（<font color = red>**类优先原则**</font>）
+
+
+* 如果实现类实现了多个接口，而多个接口定义了同名同参数的默认方法。
+
+  * 则在实现类没有重写此方法的情况下，报错。 ——> <font color = red>**接口冲突**</font>
+
+
+* 调用父类、接口中被重写的方法
+
+  * 父类：super.方法
+
+  * 接口：接口名.super.方法
+
+## 三、 类的成员之五：内部类(InnerClass)
+
+#### 1. Java中允许将类A生命在类B中，则类A就是内部类，类B称为外部类。
+
+#### 2. 内部类的分类
+
+* 成员内部类和局部内部类编译后都会生成字节码文件。
+
+
+* 成员内部类(静态、非静态)：外部类$内部类名.class
+
+  * 作为一个类
+    * 类内部可以定义属性、方法、构造器等
+    * 可以被final修饰，表示此类不能被继承
+    * 可以被abstract修饰，表示此类不能被实例化
+    
+  * 作为外部类的成员
+    * 可以调用外部类的结构
+    * 可以被static修饰
+    * 可以被4中不同的权限修饰
+
+
+* 局部内部类(构造器、方法、代码块)：外部类$数字 内部类名.class
+
+#### 3. 若干问题
+
+* 3.1 如何实例化成员内部类的对象
+
+```java
+// 静态内部类
+Animal.Dog dog = new Animal.Dog();
+dog.show();
+
+// 非静态内部类
+Animal a = new Animal();
+Animal.Bird b = a.new Bird();
+b.show();
+```
+
+* 3.2 如何在成员内部类中区分调用重名的外部类的结构
+
+```java
+class Animal{
+    String name;
+    
+    class Bird{
+        String name;
+        
+        // 调用内部类中的属性
+        System.out.println(this.name);
+        
+        
+        // 调用外部类中的属性
+        System.out.println(Person.this.name);
+    }
+}
+```
+
+* 3.3 开发中局部内部类的使用
+
+```java
+class A {
+
+  // 返回一个实现拿了Comparable接口的类的对象
+  public Comparable getComparable() {
+
+    // 方式一：返回接口的非匿名实现类的匿名对象
+    class MyComparable implements Comparable {
+        @Override
+        public int compareTo(Object o) {
+        return 0;
+      }
+    }
+
+    return new MyComparable;
+
+    //方式二：返回接口的匿名实现类的匿名对象
+
+    return new Comparable() {
+      @Override
+      public int compareTo(Object o) {
+        return 0;
+      }
+    };
+  }
+}
+```
+
+* 3.4 局部内部类内部的方法中，如果要调用局部内部类所声明的方法中的局部变量，则要求此局部变量声明为final
+
+  * JDK 7及以前：要求此局部变量现实地声明为final
+  * JDK 8及以后：可以省略final的声明
+
+```java
+public void method(){
+    int num = 10; // 此时num为final的
+    
+    class AA{
+        
+        public void show(){
+          System.out.println(num);
+        }
+    }
+        }
+```
