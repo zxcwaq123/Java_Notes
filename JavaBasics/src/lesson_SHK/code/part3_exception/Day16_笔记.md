@@ -94,5 +94,34 @@ public void method() throws FileNotFoundException, IOException{
 * try-catch-finally：真正的将异常处理掉了
 * throws：只是将异常抛给了方法的调用者，异常并没有被处理掉。
 
-## 三、重写异常抛出的规则
 
+### 3. 如何选择try-catch-finally 还是 throws
+
+* 如果父类中被重写的方法没有抛出异常，则子类重写的方法也不能使用throws。
+  * 如果子类重写的方法有异常，则必须使用try-catch-finally的方法处理。
+
+* 执行的方法a中，先后又调用了另外的几个有递进执行关系的方法，则这几个方法用**throws**的方式进行处理，而执行的方法a可以考虑用**try-catch-finally**的方式进行处理。
+
+*   
+
+### 4. 异常抛出的重写规则
+
+* 子类重写的方法抛出的异常类型不大于父类被重写的方法抛出的异常类型
+
+### 5. 手动抛出异常
+
+#### 5.1 异常对象的产生
+
+* 系统自动生成的异常对象
+* 手动生成一个异常对象，并抛出(throw)
+
+#### 5.2 throw与throws
+
+* throw：手动抛出异常对象
+* throws：异常的处理机制，将异常抛给方法的调用者。
+
+### 6. 自定义异常类
+
+* 继承于现有的异常结构：RuntimeException, Exception
+* 提供全局常量：static final long serialVersionUID
+* 提供重载的构造器
