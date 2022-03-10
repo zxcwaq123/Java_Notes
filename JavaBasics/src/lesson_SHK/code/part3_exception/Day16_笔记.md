@@ -117,8 +117,8 @@ public void method() throws FileNotFoundException, IOException{
 
 #### 5.2 throw与throws
 
-* throw：手动抛出异常对象
-* throws：异常的处理机制，将异常抛给方法的调用者。
+* throw：表示抛出一个异常类的对象，是生成异常对象的过程，声明在方法体内。
+* throws：属于异常处理的机制之一，将异常抛给方法的调用者，声明在方法的声明处。
 
 ### 6. 自定义异常类
 
