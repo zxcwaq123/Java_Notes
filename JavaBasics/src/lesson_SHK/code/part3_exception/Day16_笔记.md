@@ -125,3 +125,7 @@ public void method() throws FileNotFoundException, IOException{
 * 继承于现有的异常结构：RuntimeException, Exception
 * 提供全局常量：static final long serialVersionUID
 * 提供重载的构造器
+
+### 7. 异常的综合练习
+
+![img_1.png](img_1.png)
