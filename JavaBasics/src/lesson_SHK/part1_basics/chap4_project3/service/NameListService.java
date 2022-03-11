@@ -60,9 +60,9 @@ public class NameListService {
 
     /*
     获取指定id的员工
-参数：指定员工的ID
-返回：指定员工对象
-异常：找不到指定的员工
+    参数：指定员工的ID
+    返回：指定员工对象
+    异常：找不到指定的员工
      */
     public Employee getEmployee(int id){
         for(int i = 0; i < employees.length; i++){
