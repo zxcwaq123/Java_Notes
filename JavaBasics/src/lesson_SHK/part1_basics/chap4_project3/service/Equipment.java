@@ -9,6 +9,10 @@ class PC implements Equipment{
     private String model;
     private String display;
 
+    public PC(){
+        super();
+    }
+
     public PC(String model, String display){
         this.model = model;
         this.display = display;
@@ -40,6 +44,10 @@ class NoteBook implements Equipment{
     private String model;
     private double price;
 
+    public NoteBook(){
+        super();
+    }
+
     public NoteBook(String model, double price){
         this.model = model;
         this.price = price;
@@ -70,6 +78,10 @@ class NoteBook implements Equipment{
 class Print implements Equipment{
     private String name;
     private String type;
+
+    public Print(){
+        super();
+    }
 
     public Print(String name, String type){
         this.name = name;
